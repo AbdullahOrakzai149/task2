@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* 2nd */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        /* 3rd */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Palindrome Checker</h2>
+        <input type="text" id="inputString" placeholder="Enter a string">
+        <button type="submit" onclick="checkPalindrome()">Check</button>
+        <div id="result"></div>
+    </div>
+<!-- 2nd -->
+<div class="container">
+    <h2>Minimum and Maximum Number Finder</h2>
+    <input type="text" id="numberSeries" placeholder="Enter numbers separated by commas">
+    <button type="submit" onclick="findMinMax()">Find Minimum and Maximum</button>
+    <div id="result"></div>
+</div>
+<!-- 3rd -->
+<div class="container">
+    <h2>Missing Number Finder</h2>
+    <input type="text" id="numberSeries" placeholder="Enter numbers separated by commas">
+    <button type="submit" onclick="findMissingNumber()">Find Missing Number</button>
+    <div id="result"></div>
+</div>
+    <script>
+        function isPalindrome(str) {
+            // Convert the string to lowercase and remove non-alphanumeric characters
+            str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+            // Check if the string is equal to its reverse
+            for (let i = 0; i < Math.floor(str.length / 2); i++) {
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function checkPalindrome() {
+            const inputString = document.getElementById("inputString").value;
+            const result = document.getElementById("result");
+            if (isPalindrome(inputString)) {
+                result.textContent = "The string is a palindrome.";
+            } else {
+                result.textContent = "The string is not a palindrome.";
+            }
+        }
+        // 2nd
+        function findMinMax() {
+            const numberSeries = document.getElementById("numberSeries").value.split(",").map(Number);
+            const min = Math.min(...numberSeries);
+            const max = Math.max(...numberSeries);
+            document.getElementById("result").textContent = `Minimum: ${min}, Maximum: ${max}`;
+        }
+        // 3rd
+        function findMissingNumber() {
+            const numberSeries = document.getElementById("numberSeries").value.split(",").map(Number);
+            const firstNumber = numberSeries[0];
+            const lastNumber = numberSeries[numberSeries.length - 1];
+            const completeSeries = Array.from({length: lastNumber - firstNumber + 1}, (_, i) => firstNumber + i);
+            const missingNumber = completeSeries.filter(num => !numberSeries.includes(num))[0];
+            document.getElementById("result").textContent = `Missing Number: ${missingNumber}`;
+        }
+    </script>
+</body>
+</html>
